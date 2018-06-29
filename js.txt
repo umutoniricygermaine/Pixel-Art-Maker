@@ -1,0 +1,31 @@
+$(document).ready(function(){
+
+$("form").submit(function makegrid(e){
+
+var rows=$("#height").val();
+var cols=$("#width").val();
+
+for(var i=1;i<=rows;i++)
+{
+$("table").append('<tr> </tr>');
+	for(var j=0;j<=cols;j++)
+	{
+ $('tr:last').append('<td ><canvas></canvas></td>');
+
+ $('td').attr('class','point');
+//console.log(i,j);
+	}
+}
+
+e.preventDefault();
+
+$(".point").click(function(event){
+var color=$("#color").val();
+$(event.target).css('background-color',color);
+});
+
+});
+
+
+
+})
